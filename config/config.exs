@@ -5,7 +5,4 @@ config :paypal_exporter, PaypalExporter.Scheduler,
     # Every minute
     #{"10 18 * * *",   fn -> PaypalExporter.Server.retrive_daily_transactions()  end},
   ]
-config :goth, json: {:system, "GCP_CREDENTIALS"}
-
-
-
+config :goth, json: {:system, "GCP_CREDENTIALS"}, disabled: System.get_env("GCP_DISABLED") == "true"

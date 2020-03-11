@@ -1,5 +1,7 @@
-# This file is a template, and might need editing before it works on your project.
 image: elixir:latest
+
+variables:
+  GCP_DISABLED: "true"
 
 before_script:
   - mix local.rebar --force
